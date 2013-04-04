@@ -1,0 +1,40 @@
+[
+  {
+    "description": "should add slash before options if db not specified",
+    "config": {
+      "host": "host1",
+      "options": {
+        "fsync": true,
+        "connectTimeoutMS": 5000
+      }
+    },
+    "expected": "mongodb://host1/?fsync=true&connectTimeoutMS=5000"
+  },
+
+  {
+    "description": "host is required",
+    "config": {
+      "db": "foo"
+    },
+    "expected": null
+  },
+
+  {
+    "description": "if user is passed, password is required",
+    "config": {
+      "host": "host1",
+      "user": "joe"
+    },
+    "expected": null
+  },
+
+  {
+    "description": "special characters should be encoded",
+    "config": {
+      "host": "host1",
+      "user": "joe schmo",
+      "password": ":+></\"\\"
+    },
+    "expected": "mongodb://joe%20schmo:%3A%2B%3E%3C%2F%22%5C@host1"
+  }
+]

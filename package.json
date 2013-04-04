@@ -1,0 +1,23 @@
+{
+  "name": "mongo-make-url",
+  "version": "0.0.1",
+  "description": "Make complex MongoDB URLs from a friendly JSON object",
+  "homepage": "https://github.com/natesilva/mongo-make-url",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/natesilva/mongo-make-url.git"
+  },
+  "bugs": "https://github.com/natesilva/mongo-make-url/issues",
+  "keywords": ["mongo", "mongodb", "url", "uri", "dsn"],
+  "author": "Nate Silva <nate@natesilva.com>",
+  "dependencies": {},
+  "devDependencies": {
+    "mocha": "*",
+    "should": "*"
+  },
+  "main": "index",
+  "scripts": {
+    "test": "./node_modules/.bin/mocha --require should --reporter spec"
+  },
+  "license": "MIT"
+}

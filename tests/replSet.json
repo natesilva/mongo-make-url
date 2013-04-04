@@ -1,0 +1,16 @@
+[
+  {
+    "description": "should create a basic replSet URL",
+    "config": {
+      "user": "dave",
+      "password": "openDoors",
+      "hosts": [ "host01", "host02", "host03:9999" ],
+      "db": "hal",
+      "options": {
+        "w": 1,
+        "replicaSet": "rsName"
+      }
+    },
+    "expected": "mongodb://dave:openDoors@host01,host02,host03:9999/hal?w=1&replicaSet=rsName"
+  }
+]

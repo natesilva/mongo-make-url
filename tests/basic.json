@@ -1,0 +1,50 @@
+[
+  {
+    "description": "should create a host-only URL",
+    "config": {
+      "host": "host1"
+    },
+    "expected": "mongodb://host1"
+  },
+
+  {
+    "description": "should create a host-only URL with a port number",
+    "config": {
+      "host": "host1:27017"
+    },
+    "expected": "mongodb://host1:27017"
+  },
+
+  {
+    "description": "should create a host-and-db URL",
+    "config": {
+      "host": "host1",
+      "db": "foo"
+    },
+    "expected": "mongodb://host1/foo"
+  },
+
+  {
+    "description": "should create a URL with username and password",
+    "config": {
+      "host": "host1",
+      "db": "foo",
+      "user": "bob",
+      "password": "secret"
+    },
+    "expected": "mongodb://bob:secret@host1/foo"
+  },
+
+  {
+    "description": "should create a URL with options",
+    "config": {
+      "host": "host1",
+      "db": "foo",
+      "options": {
+        "fsync": true,
+        "connectTimeoutMS": 5000
+      }
+    },
+    "expected": "mongodb://host1/foo?fsync=true&connectTimeoutMS=5000"
+  }
+]
